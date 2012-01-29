@@ -1,7 +1,8 @@
 TuneHunt::Application.routes.draw do
   get "tune/next" => "tune#next", :as => :tune_next
-  match "tune/:id" => 'tune#view', :as => :tune
-  match "tune/:id/flag" => 'tune#flag', :as => :tune_flag
+  get "tunes/flag/:flag" => "tune#index", :as => :flagged_tunes
+  get "tune/:id" => "tune#view", :as => :tune
+  post "tune/:id/flag" => 'tune#flag', :as => :tune_flag
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

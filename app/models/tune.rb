@@ -2,6 +2,7 @@ class Tune < ActiveRecord::Base
 
   attr_accessor :track
   has_many :flags, :through => :user_tune_flags
+  has_many :user_tune_flags
 
   def self.parse(track)
     tune = Tune.new

@@ -1,5 +1,9 @@
 class TuneController < ApplicationController
 
+  def index
+    @flag = Flag.find(params[:flag])
+    @tunes = Tune.joins(:user_tune_flags).where(:user_tune_flags => {:flag_id => params[:flag]})
+  end
 
   def next
     redirect_to tune_path(:id => next_track_id)

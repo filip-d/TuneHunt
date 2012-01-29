@@ -1,0 +1,8 @@
+<h1><%= @flag.desc %>:</h1>
+<% @tunes.each do |tune| %>
+	<img src="<%= tune.track.release.image %>" />
+	<% link_to(tune_path(tune.track_id)) do %>
+	<%= tune.track_title %>
+	<%= tune.artist_name %><br />
+	<% end %>
+<% end %>
