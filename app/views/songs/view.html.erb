@@ -1,0 +1,13 @@
+<a href="/songs/next">
+<div style="height:360px; vertical-align:middle">
+<img src="<%=@song.track.release.image%>" width="<%= @song.track.release.type == :single ? "350" : "350"  %>">
+</div></a>
+<br/><br/>
+<audio controls autobuffer autoplay="true">  <source src="<%=@song.preview_url %>" /> </audio><br /><br />
+<%= @song.track.release.tracks.size %> AMAZING TRACKS<br />
+<a href="<%=@song.track.url%>" target="_blank">ABSOLUTE BARGAIN AT  <%= @song.track.release.price.formatted_price%>!!!</a>
+<% #form_tag(song_flag_path, :method => "post") do %>
+	<% @flags.each do |flag| %>
+		<%= button_to flag.desc, { :action => :flag, :id => @song.track_id, :flag => flag.id }, :method => :post%>
+	<% end %>
+<%# end %>

@@ -1,0 +1,6 @@
+api_url: api.7digital.com
+api_version: 1.2
+oauth_consumer_key: 7drc7kx7x66f
+oauth_consumer_secret: gcn5ws7a68wfpdra
+lazy_load: true
+verbose: true
