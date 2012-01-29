@@ -11,12 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120129010148) do
+ActiveRecord::Schema.define(:version => 20120129140327) do
 
   create_table "flags", :force => true do |t|
     t.string "key"
     t.string "desc"
     t.string "style"
+  end
+
+  create_table "tune_user_flags", :force => true do |t|
+  end
+
+  create_table "tunes", :force => true do |t|
+    t.integer "track_id"
+    t.string  "track_title"
+    t.integer "artist_id"
+    t.string  "artist_name"
+    t.string  "image_url"
+  end
+
+  create_table "user_tune_flags", :force => true do |t|
+    t.integer "user_id"
+    t.integer "tune_id"
+    t.integer "flag_id"
   end
 
 end

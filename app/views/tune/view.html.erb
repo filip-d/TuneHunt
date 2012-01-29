@@ -1,13 +1,20 @@
-<a href="/songs/next">
+<% link_to tune_next_path do %>
 <div style="height:360px; vertical-align:middle">
 <img src="<%=@tune.track.release.image%>" width="<%= @tune.track.release.type == :single ? "350" : "350"  %>">
-</div></a>
-<br/><br/>
+</div>
+<% end %>
+<br/>
+<%= @tune.artist_name %> - <%= @tune.track_title %>
+<br/>
 <audio controls autobuffer autoplay="true">  <source src="<%=@tune.preview_url %>" /> </audio><br /><br />
-<%= @tune.track.release.tracks.size %> AMAZING TRACKS<br />
-<a href="<%=@tune.track.url%>" target="_blank">ABSOLUTE BARGAIN AT  <%= @tune.track.release.price.formatted_price%>!!!</a>
 <% #form_tag(song_flag_path, :method => "post") do %>
 	<% @flags.each do |flag| %>
 		<%= button_to flag.desc, { :action => :flag, :id => @tune.track_id, :flag => flag.id }, :method => :post%>
 	<% end %>
 <%# end %>
+Release tags: <%= @tune.track.release.tags.map{|tag| tag.text}.join(',')%>
+Artist tags: <%= @tune.track.artist.tags.map{|tag| tag.text}.join(',')%>
+
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="tunehunt" data-size="large" data-text="Check out what I've discovered on my tune hunt: ">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<a href="<%=@tune.track.url%>" target="_blank">BUY (<%= @tune.track.release.price.formatted_price%>)</a>
