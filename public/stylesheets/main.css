@@ -1,7 +1,7 @@
 
 body {
 background-color: #333;
-padding: 5em;
+padding: 0.5em;
 font-size: 77%;
 }
 
@@ -50,8 +50,8 @@ img.poweredby {
 
 
 div#quiz {
-width: 30em;
-height: 40em;
+width: 32em;
+height: 36em;
 margin: 0 auto;
 padding: 1em;
 padding-bottom: .5em;

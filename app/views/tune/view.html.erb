@@ -1,20 +1,9 @@
-<div id="quiz">
-<% link_to tune_next_path do %>
-<div style="height:360px; vertical-align:middle">
+<div id="quiz" style="text-align: center;">
+<div style="padding: 0.3em;"><%= @tune.artist_name %> - <%= @tune.track_title %></div>
+<div style="height:360px; vertical-align:middle; text-align: center;">
 <img src="<%=@tune.track.release.image%>" width="<%= @tune.track.release.type == :single ? "350" : "350"  %>">
 </div>
-<% end %>
-<br/>
-<%= @tune.artist_name %> - <%= @tune.track_title %>
-<br/>
-<audio controls autobuffer autoplay="true">  <source src="<%=@tune.preview_url %>" /> </audio><br /><br />
-<% #form_tag(song_flag_path, :method => "post") do %>
-	<% @flags.each do |flag| %>
-	<% end %>
-<%# end %>
-Release tags: <%= @tune.track.release.tags.map{|tag| tag.text}.join(',')%>
-Artist tags: <%= @tune.track.artist.tags.map{|tag| tag.text}.join(',')%>
-
+<audio controls autobuffer autoplay="true">  <source src="<%=@tune.preview_url %>" /> </audio><br />
 	<div class="colmask doublepage">
 	<div class="colleft">
 	<div class="col1">
@@ -34,8 +23,8 @@ Artist tags: <%= @tune.track.artist.tags.map{|tag| tag.text}.join(',')%>
 				<a href="https://twitter.com/share" class="twitter-share-button" data-via="tunehunt" data-size="large" data-text="What a gem I've discovered on my tune hunt: ">Tweet</a>
 				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 			</div>
-			<div class="col2">
-				<a href="<%=@tune.track.url%>" target="_blank" class="button">BUY (<%= @tune.track.release.price.formatted_price%>)</a>			</div>
+			<div class="col2" style="text-align: center;">
+				<a href="<%=@tune.track.url%>" target="_blank" class="button" style="margin: 0 3em; width: 5em;">BUY</a>			</div>
 			</div>
 	</div>
 </div>

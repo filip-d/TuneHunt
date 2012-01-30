@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TuneHunt</title>
+  <title>Tune Hunt</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
@@ -9,6 +9,15 @@
 <body>
 
 <%= yield %>
-
+<div id="footer">
+	<div class="socialrubbish">
+	</div>
+	<div class="poweredby">
+		<div style="display: block; float: left;">powered by</div>
+		<a href="http://7digital.com/?partner=1300">
+			<img src="/images/7digital-grayandwhite.png" class="poweredby" alt="7digital" border="0" />
+		</a>
+	</div>
+</div>
 </body>
 </html>
