@@ -9,7 +9,7 @@
 Flag.delete_all
 
 Flag.create(:key => :known, :style => :hunter, :desc => "ah, i know this one")
-Flag.create(:key => :hit, :style => :hunter, :desc => "this sounds good!")
+Flag.create(:key => :hit, :style => :hunter, :desc => "These sound good")
 Flag.create(:key => :shit, :style => :hunter, :desc => "please, no!")
 Flag.create(:key => :maybe, :style => :hunter, :desc => "hmm, maybe")
 Flag.create(:key => :maybe, :style => :hunter, :desc => "not my type of music")
@@ -19,7 +19,7 @@ Flag.create(:key => :maybe, :style => :hipster, :desc => "not that bad")
 Flag.create(:key => :known, :style => :hipster, :desc => "i knew about this one ages ago")
 Flag.create(:key => :nevermind, :style => :hipster, :desc => "this music style is bellow my par")
 Flag.create(:key => :shit, :style => :hipster, :desc => "piece of crap")
-Flag.create(:key => :joke, :style => :hipster, :desc => "so uncool it's cool'")
+Flag.create(:key => :joke, :style => :hipster, :desc => "So uncool it's cool")
 
 
 
