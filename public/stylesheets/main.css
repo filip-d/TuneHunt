@@ -1,0 +1,436 @@
+
+body {
+background-color: #333;
+padding: 5em;
+font-size: 77%;
+}
+
+h1 {
+    font-family: Verdana, sans-serif;
+    font-size: 1.5em;
+    margin: 0.2em 0 0 0;
+}
+
+h2 {
+    font-family: Verdana, sans-serif;
+    font-size: 1.2em;
+    margin: 0.5em 0 0.2em 0;
+}
+
+div#footer {
+    width: 28em;
+    margin: 0 auto;
+    color: #FFFFFF;
+    font-family: Verdana, sans-serif;
+    position: relative;
+    padding: 1em;
+    padding-top: .5em;
+    font-size: 1.5em;
+}
+
+div.socialrubbish {
+    display: block;
+    float: left;
+    font-size: 0.8em;
+}
+
+div.poweredby {
+    display: block;
+    float: right;
+    font-size: 0.7em;
+    line-height: 1.1em;
+    text-align: right;
+}
+
+img.poweredby {
+    padding-left: 0.5em;
+    vertical-align: middle;
+}
+
+
+
+div#quiz {
+width: 30em;
+height: 40em;
+margin: 0 auto;
+padding: 1em;
+padding-bottom: .5em;
+position: relative;
+color: #333;
+background: #FFFFFF;
+-moz-border-radius: 1.5em;
+-webkit-border-radius: 1.5em;
+font-family: Verdana, sans-serif;
+font-size: 1.5em;
+
+}
+	div#quiz.wait {
+	background: #FFFFFF url(/static/img/wait.gif) no-repeat center;
+	}
+
+	div#quiz h3 {
+		display: block;
+		margin: .8em 1em 0;
+		color: #000;
+		background-color: #FFFFFF;
+		font-size: 100%;
+		border: 0;
+		}
+
+	div#quiz button,a.button {
+		display: block;
+		margin: .5em 0;
+		padding: 0.5em 2em;
+		color: #FFFFFF;
+		cursor: pointer;
+		background-color: #2780af;
+		font-size: 100%;
+		-moz-border-radius: .5em;
+		-webkit-border-radius: .5em;
+		border: 0;
+		text-decoration: none;
+		display: block;
+		text-align: center;
+		}
+
+    div#quiz rank1,a.rank1 {
+	    color: #FFFFFF;
+	    background-color: #17d400;;
+	}
+    div#quiz rank1,a.rank2 {
+        color: #FFFFFF;
+        background-color: #95d426;;
+    }
+    div#quiz rank1,a.rank3 {
+        color: #FFFFFF;
+        background-color: #d4c730;;
+    }
+    div#quiz rank1,a.rank4 {
+        color: #FFFFFF;
+        background-color: #d4b125;;
+    }
+div#quiz rank1,a.rank5 {
+    color: #FFFFFF;
+    background-color: #d48628;;
+}
+div#quiz rank1,a.rank6 {
+    color: #FFFFFF;
+    background-color: #d45d1d;;
+}
+
+
+			div#quiz button:hover,a.button:hover {
+			color: #FFFFFF;
+			background-color: #309ed6;;
+			}
+	
+	div#quiz p#score {
+		position: absolute;
+		top: 0;
+		right: 1em;
+	}
+
+	div#quiz p#level {
+		position: absolute;
+		top: 0;
+   		right: 10em;
+	}
+
+	div#quiz #lives {
+		position: absolute;
+		top: 20.2em;
+		left: 1em;
+		text-align:left;
+	}
+		div#lives img {
+			float: left;
+			margin: auto;
+		}
+
+	div#clock {
+	margin-top: .5em;
+	height: .2em;
+	background-color: #f6b600;
+	}
+
+	div#quiz button#next {
+		margin: 0 auto;
+		display: block;
+		border: 0;
+		right: 0;
+		top: 3em;
+        width: 12em;
+	}
+
+	div#quiz p.question {
+	margin-top: .5em;
+	height: 2em;
+	}
+	
+	div#quiz p.answer {
+	margin-top: 3em;
+	margin-bottom: 3em;
+	padding: .5em;
+	color: #FFFFFF;
+	background-color: #CC0000;
+	text-align: center;
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
+	}
+		div#quiz p.answer.correct {
+		background-color: #00CC00;
+		}
+
+    div#quiz p.nextLevelText {
+        text-align: center;
+    }
+    div#quiz p.nextLevel {
+        text-align: center;
+        font-weight: bold;
+        font-size: 2em;
+    }
+
+	div#quiz ol {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	}
+		div#quiz ol li {
+		display: block;
+		margin: .5em .5em;
+		width: 16em;
+		right: 0;
+		padding: .5em;
+		color: #FFFFFF;
+		cursor: pointer;
+		background-color: #2780af;
+		-moz-border-radius: .5em;
+		-webkit-border-radius: .5em;
+		}
+			div#quiz ol li:hover {
+			color: #FFFFFF;
+			background-color: #309ed6;
+			}
+
+        div#quiz ol div.image {
+        display: inline;
+        margin: .5em 0 .5em 0.9em;
+/*        color: #FFF;          */
+        background-color: #AAA;
+        cursor: pointer;
+        -moz-border-radius: .5em;
+        -webkit-border-radius: .5em;
+        }
+            div#quiz ol div.image:hover {
+            color: #FFFFFF;
+            background-color: #309ed6;
+            }
+
+
+	img#questionPicture {
+		float: left;
+		margin: 0 .5em;
+	}
+
+        div#quiz input#playerName {
+            margin: 0 auto;
+            font-size: 1em;
+            text-align: center;
+            width: 12em;
+            display: block;
+        }
+        div#quiz input#playerUrl {
+            margin: 0.5em auto;
+            font-size:0.75em;
+            text-align: center;
+            width: 16em;
+            display: block;
+        }
+
+        div#quiz a.showScores {
+           margin: 0.5em auto;
+           width: 16em;
+        }
+        div#quiz button.submitScore {
+            margin: 0.5em auto;
+            width: 13em;
+        }
+        div#quiz table.submitScore {
+            margin: 0.2em auto;
+            width: 28em;
+            height: 8.5em;
+            border: #333333 dotted 2px;
+            -moz-border-radius: .5em;
+            -webkit-border-radius: .5em;
+        }
+            div#quiz table.submitScore td {
+                padding: 0 0.5em;
+            }
+        div#quiz a.showAnswers {
+            margin: 0.5em auto;
+            width: 11em;
+        }
+        div#quiz a.playAgain {
+            margin: 0.5em auto;
+            width: 7em;
+        }
+
+
+
+div#scores, div#answers {
+	width: 28em;
+	margin: 0 auto;
+	padding: 1em;
+	padding-bottom: .5em;
+	position: relative;
+	color: #333;
+	background: #FFF;
+	-moz-border-radius: 1.5em;
+	-webkit-border-radius: 1.5em;
+	font-family: Verdana;
+	font-size: 1.5em;
+}
+
+    div#answers p.answer {
+	margin-top: 0em;
+	margin-bottom: 0em;
+	padding: .5em;
+	color: #FFF;
+	background-color: #CC0000;
+	text-align: center;
+	-moz-border-radius: .5em;
+	-webkit-border-radius: .5em;
+	}
+
+	div#answers h2 {
+		display: block;
+		margin: .5em 0;
+		padding: 0.5em 2em;
+		color: #FFF;
+		background-color: #000;
+		font-size: 100%;
+		-moz-border-radius: .5em;
+		-webkit-border-radius: .5em;
+		border: 0;
+		}
+
+	div#answers h3 {
+		display: block;
+		margin: .8em 1em 0;
+		color: #000;
+		background-color: #fff;
+		font-size: 100%;
+		border: 0;
+		}
+
+     div#answers tr.answer {
+		padding: 0.2em 0;
+		font-size: 100%;
+		border: 0;
+		 display: block;
+	}
+	div#answers td.answer {
+		margin: .2em;
+		padding: 0.1em 1em;
+		background-color: #ccffcc;
+		font-size: 100%;
+		-moz-border-radius: .3em;
+		-webkit-border-radius: .3em;
+		border: 0;
+        display: block;
+        width:18em;
+		}
+	div#answers td.incorrect {
+		background-color: #ffcccc;
+        text-decoration: line-through;
+	}
+
+	div#answers td a.answer {
+		margin: .2em;
+		padding: 0.1em 0.4em;
+		font-size: 100%;
+		-moz-border-radius: .3em;
+		-webkit-border-radius: .3em;
+		border: 0;
+		color: #FFFFFF;
+		cursor: pointer;
+		background-color: #2870af;
+		text-decoration: none;
+		right: 0;
+		float: right;
+        display: block;
+        width:3em;
+        text-align: center;
+		}
+			div#answers td a.answer:hover {
+			color: #FFFFFF;
+			background-color: #309ed6;
+			}
+
+table.scores {
+    width: 100%;
+    border-spacing: 0;
+}
+
+    table.scores tr.highlight {
+        background-color: #fbe2a1;
+    }
+
+	table.scores td {
+	padding: .2em;
+	border-bottom: 1px dotted #CCC;
+	}
+		table.scores td:first-child {
+		padding-left: .5em;
+		}
+		table.scores td:last-child {
+		padding-right: .5em;
+		}
+		table.scores td.position {
+		width: 1.5em;
+		text-align: right;
+		}
+		table.scores td.score {
+		text-align: right;
+		}
+
+    table.scores a {
+        color: #000;
+        text-decoration: none;
+    }
+
+	/* column container */
+	.colmask {
+		clear:both;
+		float:left;
+		width:100%;			/* width of whole page */
+		overflow:hidden;		/* This chops off any overhanging divs */
+	}
+	/* common column settings */
+	.colright,
+	.colmid,
+	.colleft {
+		float:left;
+		width:100%;
+		position:relative;
+	}
+	.col1,
+	.col2,
+	.col3 {
+		float:left;
+		position:relative;
+		padding:0;
+		overflow:hidden;
+	}
+	/* 2 Column (double page) settings */
+	.doublepage .colleft {
+		right:50%;			/* right column width */
+	}
+	.doublepage .col1 {
+		width:46%;			/* left column content width (column width minus left and right padding) */
+		left:52%;			/* right column width plus left column left padding */
+	}
+	.doublepage .col2 {
+		width:46%;			/* right column content width (column width minus left and right padding) */
+		left:56%;			/* (right column width) plus (left column left and right padding) plus (right column left padding) */
+	}
