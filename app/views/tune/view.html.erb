@@ -32,7 +32,7 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$player = $("#player").mPlayer();
-			$player.setFile("<%=@tune.preview_url %>");
+			setTimeout(function(){$player.setFile("<%=@tune.preview_url %>")}, 1200);
 		});
 	</script>
 </div>
