@@ -15,6 +15,17 @@ class Tune < ActiveRecord::Base
     tune
   end
 
+  def self.fake()
+    tune = Tune.new
+    tune.track_id = rand(123456)
+    tune.track_title = "track#{tune.track_id}"
+    tune.artist_id = 1
+    tune.artist_name = "unknown"
+    tune.image_url = "http://asdsads.com/adsds.jpg"
+    tune.track = Sevendigital::Track.new(SEVENDIGITAL_CLIENT)
+    tune
+  end
+
   def preview_url
     "http://previews.7digital.com/clips/34/#{track_id}.clip.mp3"
   end

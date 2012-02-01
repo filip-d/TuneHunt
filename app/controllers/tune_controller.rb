@@ -13,19 +13,20 @@ class TuneController < ApplicationController
       @sevendigital_client = Sevendigital::Client.new
 
       @tune = Tune.parse(SEVENDIGITAL_CLIENT.track.get_details(params[:id], {:imageSize=>"500"}))
-
+    #  @tune = Tune.fake
       @flags = Flag.find_all_by_style(:hipster)
 
   end
 
   def flag
     tune = Tune.find_by_track_id(params[:id])
+    flag = Flag.find_by_key(params[:flag])
 
     if tune.nil?
       tune = Tune.parse(SEVENDIGITAL_CLIENT.track.get_details(params[:id], {:imageSize=>"500"}))
       tune.save
     end
-    tune.flag(0, params[:flag])
+    tune.flag(0, flag.id)
 
     redirect_to tune_path(:id => next_track_id)
   end

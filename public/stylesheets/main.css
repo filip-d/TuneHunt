@@ -77,7 +77,7 @@ font-size: 1.5em;
 		border: 0;
 		}
 
-	div#quiz button,a.button {
+	div#quiz .button {
 		display: block;
 		margin: .5em 0;
 		padding: 0.5em 2em;
@@ -93,36 +93,34 @@ font-size: 1.5em;
 		text-align: center;
 		}
 
-    div#quiz rank1,a.rank1 {
-	    color: #FFFFFF;
+    div#quiz input.wide {
+        width: 14em;
+    }
+
+    div#quiz .rank1 {
 	    background-color: #17d400;;
 	}
-    div#quiz rank1,a.rank2 {
-        color: #FFFFFF;
+    div#quiz .rank2 {
         background-color: #95d426;;
     }
-    div#quiz rank1,a.rank3 {
-        color: #FFFFFF;
+    div#quiz .rank3 {
         background-color: #d4c730;;
     }
-    div#quiz rank1,a.rank4 {
-        color: #FFFFFF;
+    div#quiz .rank4{
         background-color: #d4b125;;
     }
-div#quiz rank1,a.rank5 {
-    color: #FFFFFF;
-    background-color: #d48628;;
-}
-div#quiz rank1,a.rank6 {
-    color: #FFFFFF;
-    background-color: #d45d1d;;
-}
+    div#quiz .rank5 {
+        background-color: #d48628;;
+    }
+    div#quiz .rank6 {
+        background-color: #d45d1d;;
+    }
 
 
-			div#quiz button:hover,a.button:hover {
-			color: #FFFFFF;
-			background-color: #309ed6;;
-			}
+    div#quiz button:hover,a.button:hover,input.button:hover {
+        color: #FFFFFF;
+        background-color: #309ed6;;
+    }
 	
 	div#quiz p#score {
 		position: absolute;

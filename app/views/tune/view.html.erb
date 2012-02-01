@@ -1,31 +1,38 @@
 <div id="quiz" style="text-align: center;">
-<div style="padding: 0.3em;"><%= @tune.artist_name %> - <%= @tune.track_title %></div>
-<div style="height:360px; vertical-align:middle; text-align: center;">
-<img src="<%=@tune.track.release.image%>" width="<%= @tune.track.release.type == :single ? "350" : "350"  %>">
-</div>
-<audio controls autobuffer autoplay="true">  <source src="<%=@tune.preview_url %>" /> </audio><br />
+	<div style="padding: 0.3em;"><%= @tune.artist_name %> - <%= @tune.track_title %></div>
+	<div style="height:360px; vertical-align:middle; text-align: center;">
+		<img src="<%=@tune.image_url%>" width="350">
+	</div>
+	<div id="player"></div>
+		<!--audio controls autobuffer autoplay="true">  <source src="<%=@tune.preview_url %>" /> </audio><br /-->
 	<div class="colmask doublepage">
-	<div class="colleft">
-	<div class="col1">
-	<%= link_to "Great stuff", { :action => :flag, :id => @tune.track_id, :flag => "hit" }, :method => :post, :class=>"button rank1"%>
-	<%= link_to "Not bad", { :action => :flag, :id => @tune.track_id, :flag => "maybe" }, :method => :post, :class=>"button rank2"%>
-	<%= link_to "Already heard this", { :action => :flag, :id => @tune.track_id, :flag => "known" }, :method => :post, :class=>"button rank3"%>
-	</div>
-	<div class="col2">
-  		<%= link_to "Not my style of music", { :action => :flag, :id => @tune.track_id, :flag => "x" }, :method => :post, :class=>"button rank4"%>
-			<%= link_to "This is bad", { :action => :flag, :id => @tune.track_id, :flag => "shit" }, :method => :post, :class=>"button rank5"%>
-			<%= link_to "So uncool it's cool", { :action => :flag, :id => @tune.track_id, :flag => "joke" }, :method => :post, :class=>"button rank6"%>
-	</div>
-	</div>
+		<div class="colleft">
+			<div class="col1">
+				<%= button_to "Great tune!", { :action => :flag, :id => @tune.track_id, :flag => "hit" }, :method => :post, :class=>"button wide rank1"%>
+				<%= button_to "Not bad", { :action => :flag, :id => @tune.track_id, :flag => "maybe" }, :method => :post, :class=>"button wide rank2"%>
+				<%= button_to "Already known", { :action => :flag, :id => @tune.track_id, :flag => "known" }, :method => :post, :class=>"button wide rank3"%>
+			</div>
+			<div class="col2">
+	  		<%= button_to "Not my style of music", { :action => :flag, :id => @tune.track_id, :flag => "nevermind" }, :method => :post, :class=>"button wide rank4"%>
+				<%= button_to "This is bad", { :action => :flag, :id => @tune.track_id, :flag => "shit" }, :method => :post, :class=>"button wide rank5"%>
+				<%= button_to "So uncool it's cool!", { :action => :flag, :id => @tune.track_id, :flag => "joke" }, :method => :post, :class=>"button wide rank6"%>
+			</div>
+		</div>
 		<div class="colmask doublepage" style="margin: 1em;">
 			<div class="colleft">
-			<div class="col1">
-				<a href="https://twitter.com/share" class="twitter-share-button" data-via="tunehunt" data-size="large" data-text="What a gem I've discovered on my tune hunt: ">Tweet</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-			</div>
-			<div class="col2" style="text-align: center;">
-				<a href="<%=@tune.track.url%>" target="_blank" class="button" style="margin: 0 3em; width: 5em;">BUY</a>			</div>
+				<div class="col1">
+					<a href="https://twitter.com/share" class="twitter-share-button" data-via="tunehunt" data-size="large" data-text="What a gem I've discovered on my tune hunt: ">Tweet</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+				</div>
+				<div class="col2" style="text-align: center;">
+					<a href="<%=@tune.track.url%>" target="_blank" class="button" style="margin: 0 3em; width: 5em;">BUY</a>			</div>
+				</div>
 			</div>
 	</div>
-</div>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$player = $("#player").mPlayer();
+			$player.setFile("<%=@tune.preview_url %>");
+		});
+	</script>
 </div>
