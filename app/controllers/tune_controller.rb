@@ -16,6 +16,8 @@ class TuneController < ApplicationController
     #  @tune = Tune.fake
       @flags = Flag.find_all_by_style(:hipster)
 
+      @page_sub_title = "- #{@tune.artist_name} - #{@tune.track_title}"
+
   end
 
   def flag
