@@ -1,0 +1,22 @@
+<div id="quiz" style="text-align: center;">
+	<div style="padding: 0.3em;"><%= @tune.artist_name %> - <%= @tune.track_title %></div>
+	<div style="height:360px; vertical-align:middle; text-align: center;">
+		<img src="<%=@tune.image_url%>" width="350">
+	</div>
+	<div id="player"></div>
+		<!--audio controls autobuffer autoplay="true">  <source src="<%=@tune.preview_url %>" /> </audio><br /-->
+	<%= button_to "Great tune!", { :action => :like, :artist_id => @tune.artist_id}, :method => :post, :class=>"button wide rank1"%>
+	<%= button_to "Don't like this", { :action => :hate, :artist_id => @tune.artist_id}, :method => :post, :class=>"button wide rank2"%>
+	<%= button_to "Play next one", { :action => :play,}, :method => :post, :class=>"button wide rank3"%>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$player = $("#player").mPlayer();
+			setTimeout(function(){$player.setFile("<%=@tune.preview_url %>")}, 1200);
+		});
+	</script>
+	<div style="font-size: 0.5em; color: grey; position: absolute; display: block; top: 300px; left: 600px; width: 300px;">
+	<% @radio.artists.sort_by{|key,value| -value}.each do |artist_id, seed| %>
+		<%=artist_id%>-<%=SEVENDIGITAL_CLIENT.artist.get_details(artist_id).name %>: <%=seed%><br/>
+	<% end %>
+	</div>
+</div>

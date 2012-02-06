@@ -8,7 +8,7 @@ class Tune < ActiveRecord::Base
     tune = Tune.new
     tune.track_id = track.id
     tune.track_title = track.title
-    tune.artist_id = track.artist.appears_as
+    tune.artist_id = track.artist.id
     tune.artist_name = track.artist.appears_as
     tune.image_url = track.release.image
     tune.track = track

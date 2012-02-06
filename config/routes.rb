@@ -1,8 +1,16 @@
 TuneHunt::Application.routes.draw do
+  get "radio/play"
+
   get "tune/next" => "tune#next", :as => :tune_next
   get "tunes/flag/:flag" => "tune#index", :as => :flagged_tunes
   get "tune/:id" => "tune#view", :as => :tune
   match "tune/:id/flag" => 'tune#flag', :as => :tune_flag
+
+  match "radio/play" => 'radio#play', :as => :radio_play
+  match "radio/new" => 'radio#new', :as => :radio_new
+  match "radio/start" => 'radio#start', :as => :radio_start
+  match "radio/like/:artist_id" => 'radio#like', :as => :radio_like
+  match "radio/hate/:artist_id" => 'radio#hate', :as => :radio_hate
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

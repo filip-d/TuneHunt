@@ -1,0 +1,8 @@
+<div id="quiz" style="text-align: center;">
+
+<%= form_tag("/radio/start", :method => "get") do %>
+	<%= label_tag(:q, "Choose artist:") %>
+	<%= text_field_tag(:q) %>
+	<%= submit_tag("Play") %>
+<% end %>
+	</div>
