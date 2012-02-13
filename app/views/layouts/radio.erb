@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>radio7digital <%=@page_sub_title%></title>
+	<meta name="description" content="Go on a music hunt - discover more hidden music treasures like <%=@page_sub_title%> within millions of songs that apart from the artist itself probably no-one else has ever listened to." />
+  <%= stylesheet_link_tag :all %>
+  <%= csrf_meta_tag %>
+  <%= javascript_include_tag "/javascripts/googleanalytics" %>
+  <%= javascript_include_tag "/javascripts/jquery-1.4.2.min.js" %>
+  <%= javascript_include_tag "/javascripts/jquery.mplayer-0.0.1.js" %>
+</head>
+<body>
+<div id="header">
+		<div style="display: block; float: left;">radio</div>
+		<a href="http://7digital.com/?partner=1300">
+			<img src="/images/7digital-grayandwhite.png" class="poweredby" style="padding-left: 0.2em" alt="7digital" border="0" />
+		</a>
+	</div>
+<%= yield %>
+
+</body>
+</html>
