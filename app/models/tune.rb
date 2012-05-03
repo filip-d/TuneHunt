@@ -30,6 +30,13 @@ class Tune < ActiveRecord::Base
     "http://previews.7digital.com/clips/34/#{track_id}.clip.mp3"
   end
 
+  def stream_url(user_id)
+      api_request = SEVENDIGITAL_CLIENT.create_api_request(:GET, "track/stream", {:formatId => 55, :trackId => track_id, :userId => user_id})
+      api_request.api_service = :media
+      api_request.require_signature
+      SEVENDIGITAL_CLIENT.operator.get_request_uri(api_request)
+  end
+
   def track
     @track ||= SEVENDIGITAL_CLIENT.track.get_details(track_id)
   end

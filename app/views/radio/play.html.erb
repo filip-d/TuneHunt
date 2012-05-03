@@ -15,7 +15,7 @@
 		$(document).ready(function() {
 			$player = $("#player").mPlayer();
 			setTimeout(function(){
-				$player.setFile("<%=@tune.preview_url %>")
+				$player.setFile("<%= @tune.stream_url(request.session_options[:id]).html_safe %>")
 				$player.live("ended", function() {
 					location.href = "/radio/play";
 				});
