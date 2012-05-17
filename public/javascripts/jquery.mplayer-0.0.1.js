@@ -7,7 +7,7 @@
   jQuery.fn.mPlayer = function(options) {
       var uiObj = this;
       var playerObj = undefined;
-      
+
       var htmlPlayer = function() {
         try {
           playerObj = new Audio();
@@ -18,11 +18,11 @@
           playerObj.setFile = function(file) {
             playerObj.src = file;
             playerObj.load();
-            
+
           }
           playerObj.addEventListener("loadstart", function() {
             if(playerObj.src) {
-              uiObj.trigger("loadstart"); 
+              uiObj.trigger("loadstart");
             }
           },false);
           playerObj.addEventListener("canplay", function() {
@@ -43,7 +43,7 @@
           return null;
         }
       };
-      
+
       var flashPlayer = function() {
         if(canUseFlash()) {
           var swf = "/javascripts/mplayer-0.0.1.swf";
@@ -85,7 +85,7 @@
           return false;
         }
       }
-      
+
       uiObj.play = function() {
         playerObj.play();
       }
@@ -103,7 +103,7 @@
       uiObj.mode = function() {
         return playerObj.mode;
       }
-      
+
       var playerObj = htmlPlayer() || flashPlayer();
       if(playerObj) {
         playerObj.setAttribute("id", "playerObj");
@@ -112,6 +112,6 @@
       } else {
         return null;
       }
-      
+
   }
 })(jQuery);

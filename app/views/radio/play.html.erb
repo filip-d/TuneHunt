@@ -1,7 +1,7 @@
 <div id="quiz" style="text-align: center;">
 	Now playing:<br/><div style="padding: 0.3em;"><b><%= @tune.artist_name %> - <%= @tune.track_title %></b></div>
 	<div style="height:360px; vertical-align:middle; text-align: center;">
-		<img src="<%=@tune.image_url%>" width="350">
+		<img src="<%=@tune.image_url%>" id="cover" width="350">
 	</div>
 	<div id="player"></div>
 		<!--audio controls autobuffer autoplay="true">  <source src="<%=@tune.preview_url %>" /> </audio><br /-->
@@ -22,6 +22,10 @@
 			}	, 1200);
 //			$player.addEventListener("ended", function(){alert("ended")});
 //			$player.addEventListener("ended", function(){location.href="play"});
+			$("#cover").live("click", function() {
+					$player.setFile("<%= @tune.stream_url(request.session_options[:id]).html_safe %>")
+			}
+			)
 		});
 	</script>
 	<% if debug_flag then %>

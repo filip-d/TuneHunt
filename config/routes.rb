@@ -7,6 +7,7 @@ TuneHunt::Application.routes.draw do
   match "tune/:id/flag" => 'tune#flag', :as => :tune_flag
 
   match "radio/play" => 'radio#play', :as => :radio_play
+  match "radio/play2" => 'radio#play2', :as => :radio_play2
   match "radio/new" => 'radio#new', :as => :radio_new
   match "radio/start" => 'radio#start', :as => :radio_start
   match "radio/like/:artist_id" => 'radio#like', :as => :radio_like

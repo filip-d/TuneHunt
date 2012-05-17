@@ -1,0 +1,9 @@
+<div id="quiz" style="text-align: center;">
+	Now playing:<br/><div style="padding: 0.3em;"><b><%= @tune.artist_name %> - <%= @tune.track_title %></b></div>
+	<div style="height:360px; vertical-align:middle; text-align: center;">
+		<img src="<%=@tune.image_url%>" id="cover" width="350">
+	</div>
+	<audio src="<%= @tune.stream_url(request.session_options[:id]).html_safe %>" controls autoplay="false" />
+
+		<!--audio controls autobuffer autoplay="false">  <source src="<%=@tune.preview_url %>" /> </audio><br /-->
+</div>

@@ -1,10 +1,11 @@
 class Tune < ActiveRecord::Base
 
   attr_accessor :track
+  attr_accessor :api_client
   has_many :flags, :through => :user_tune_flags
   has_many :user_tune_flags
 
-  def self.parse(track)
+  def self.parse(track, sd_client)
     tune = Tune.new
     tune.track_id = track.id
     tune.track_title = track.title
@@ -12,6 +13,7 @@ class Tune < ActiveRecord::Base
     tune.artist_name = track.artist.appears_as
     tune.image_url = track.release.image
     tune.track = track
+    tune.api_client = sd_client
     tune
   end
 
@@ -23,6 +25,7 @@ class Tune < ActiveRecord::Base
     tune.artist_name = "unknown"
     tune.image_url = "http://asdsads.com/adsds.jpg"
     tune.track = Sevendigital::Track.new(SEVENDIGITAL_CLIENT)
+    tune.api_client = SEVENDIGITAL_CLIENT
     tune
   end
 
@@ -31,14 +34,14 @@ class Tune < ActiveRecord::Base
   end
 
   def stream_url(user_id)
-      api_request = SEVENDIGITAL_CLIENT.create_api_request(:GET, "track/stream", {:formatId => 55, :trackId => track_id, :userId => user_id})
+      api_request = api_client.create_api_request(:GET, "track/stream", {:formatId => 55, :trackId => track_id, :userId => user_id})
       api_request.api_service = :media
       api_request.require_signature
-      SEVENDIGITAL_CLIENT.operator.get_request_uri(api_request)
+      api_client.operator.get_request_uri(api_request)
   end
 
   def track
-    @track ||= SEVENDIGITAL_CLIENT.track.get_details(track_id)
+    @track ||= api_client.track.get_details(track_id)
   end
 
   def flag(user_id, flag_id)
