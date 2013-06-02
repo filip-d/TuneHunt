@@ -2,7 +2,14 @@ class TuneController < ApplicationController
 
   def index
     @flag = Flag.find_by_key(params[:flag])
-    @tunes = Tune.joins(:user_tune_flags).where(:user_tune_flags => {:flag_id => @flag.id})
+    @tunes = Tune.all(
+        :select => "track_id, image_url",
+        :joins => "inner join user_tune_flags ON user_tune_flags.tune_id = Tunes.id",
+        :conditions => "user_tune_flags.flag_id = #{@flag.id}",
+        :group => "track_id, image_url, tune_id",
+        :order => "count(*) desc",
+        :limit => "80"
+    );
   end
 
   def next
