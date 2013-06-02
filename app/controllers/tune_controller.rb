@@ -6,7 +6,7 @@ class TuneController < ApplicationController
         :select => "track_id, image_url",
         :joins => "inner join user_tune_flags ON user_tune_flags.tune_id = Tunes.id",
         :conditions => "user_tune_flags.flag_id = #{@flag.id}",
-        :group => "track_id, image_url, tune_id",
+        :group => "track_id, image_url, Tunes.id",
         :order => "count(*) desc",
         :limit => "80"
     );
