@@ -1,8 +1,8 @@
 api_url: api.7digital.com
 api_version: 1.2
 oauth_consumer_key: 7drc7kx7x66f
-oauth_consumer_secret: gcn5ws7a68wfpdra
+oauth_consumer_secret: gcn5ws7a68wfpdrafd
 lazy_load: true
 verbose: false
-media_api_url: stream.geo.7digital.com
+media_api_url: stream.svc.7digital.net
 media_api_version: media

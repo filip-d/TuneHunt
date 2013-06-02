@@ -1,5 +1,8 @@
 <div id="quiz" style="text-align: center;">
-	Now playing:<br/><div style="padding: 0.3em;"><b><%= @tune.artist_name %> - <%= @tune.track_title %></b></div>
+	Now playing:<br/><div style="padding: 0.3em;">
+<a href="<%= @tune.track.release.url%>" target="_blank">
+<b><%= @tune.artist_name %> - <%= @tune.track_title %></b></a></div>
+	<div>Track ID: <%= @tune.track_id %>, label: <%= @tune.track.release.label.name %>
 	<div style="height:360px; vertical-align:middle; text-align: center;">
 		<img src="<%=@tune.image_url%>" id="cover" width="350">
 	</div>
@@ -15,7 +18,7 @@
 		$(document).ready(function() {
 			$player = $("#player").mPlayer();
 			setTimeout(function(){
-				$player.setFile("<%= @tune.stream_url(request.session_options[:id]).html_safe %>")
+//				$player.setFile("<%= @tune.stream_url(request.session_options[:id]).html_safe %>")
 				$player.live("ended", function() {
 					location.href = "/radio/play";
 				});
@@ -23,12 +26,13 @@
 //			$player.addEventListener("ended", function(){alert("ended")});
 //			$player.addEventListener("ended", function(){location.href="play"});
 			$("#cover").live("click", function() {
-					$player.setFile("<%= @tune.stream_url(request.session_options[:id]).html_safe %>")
-			}
+								$player.setFile("<%= @tune.stream_url(request.session_options[:id]).html_safe %>")
+
+					}
 			)
+
 		});
 	</script>
-	<!--div style="font-size: 0.5em;"><a href="<%= @tune.stream_url(request.session_options[:id]).html_safe %>"><%= @tune.stream_url(request.session_options[:id]).html_safe %></a></div-->
 	<% if debug_flag then %>
 		<div style="font-size: 0.5em; color: grey; position: absolute; display: block; top: 300px; left: 600px; width: 300px;">
 		<% @radio.artists.sort_by{|key,value| -value}.each do |artist_id, seed| %>

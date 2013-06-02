@@ -14,5 +14,5 @@ end
 
 SIMPLE_CACHE = VerySimpleCache.new
 #CACHE = ::MemCache.new 'localhost:11211', :namespace => 'tunehunt'
-SEVENDIGITAL_CLIENT = Sevendigital::Client.new(:country => 'GB', :cache => SIMPLE_CACHE, :verbose => "very_verbose")
+SEVENDIGITAL_CLIENT = Sevendigital::Client.new(:country => 'GB', :cache => SIMPLE_CACHE, :verbose => false)
 

@@ -2,6 +2,9 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.10'
 
+gem 'thin', :group => :production
+
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -11,6 +14,7 @@ end
 gem 'mysql', :group => :production
 
 gem '7digital'
+#gem "7digital", :git => "git://github.com/filip7d/7digital.git", :branch => "no_peachy"
 gem 'nokogiri'
 gem 'memcache-client'
 gem 'oauth'
