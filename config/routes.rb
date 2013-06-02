@@ -2,7 +2,7 @@ TuneHunt::Application.routes.draw do
   get "radio/play"
 
   get "tune/next" => "tune#next", :as => :tune_next
-  get "tunes/flag/:flag" => "tune#index", :as => :flagged_tunes
+  get "tunes/:flag" => "tune#index", :as => :flagged_tunes
   get "tune/:id" => "tune#view", :as => :tune
   match "tune/:id/flag" => 'tune#flag', :as => :tune_flag
 

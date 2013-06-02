@@ -25,7 +25,7 @@
 					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 				</div>
 				<div class="col2" style="text-align: center;">
-					<a href="<%=@tune.track.url%>" target="_blank" class="button" style="margin: 0 3em; width: 5em;">BUY</a>			</div>
+					<a href="<%=@tune.track.url%>" target="_blank" class="7d-buynow button" data-trackid="<%=@tune.track_id%>" style="margin: 0 3em; width: 5em;">BUY</a>			</div>
 				</div>
 			</div>
 	</div>
@@ -35,4 +35,7 @@
 			setTimeout(function(){$player.setFile("<%=@tune.preview_url %>")}, 1200);
 		});
 	</script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
+  <script type="text/javascript" src="http://instant.7digital.com/scripts/7d-buyitnow.min.js"></script>
 </div>

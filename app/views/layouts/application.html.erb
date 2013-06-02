@@ -10,10 +10,13 @@
   <%= javascript_include_tag "/javascripts/jquery.mplayer-0.0.1.js" %>
 </head>
 <body>
-
+<div id="header">
+ <a href="/"><b>TuneHunt</b></a> discovered: <a href="/tunes/hit">the good</a>, <a href="/tunes/shit">the bad</a> and <a href="/tunes/joke">the weird</a>.
+</div>
 <%= yield %>
 <div id="footer">
-	<div class="socialrubbish">
+
+  <div class="socialrubbish">
 		Created at <a href="http://musichackday.org/" target="_blank" style="color: white;">Midem Hack Day 2012</a>
 	</div>
 	<div class="poweredby">

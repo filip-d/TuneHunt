@@ -16,7 +16,7 @@ gem 'mysql', :group => :production
 gem '7digital'
 #gem "7digital", :git => "git://github.com/filip7d/7digital.git", :branch => "no_peachy"
 gem 'nokogiri'
-gem 'memcache-client'
+gem 'dalli'
 gem 'oauth'
 
 # Use unicorn as the web server

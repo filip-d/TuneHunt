@@ -5,6 +5,10 @@ padding: 0.5em;
 font-size: 77%;
 }
 
+a:visited {
+    color: #fff;
+}
+
 h1 {
     font-family: Verdana, sans-serif;
     font-size: 1.5em;
@@ -21,10 +25,9 @@ div#header {
     margin: 0 auto 0.5em;
     display: block;
     font-family: Verdana, sans-serif;
-    font-size: 1.8em;
+    font-size: 1.5em;
     color: #ffffff;
-    width: 20em;
-
+    width: 30em;
 }
 
 div#footer {
@@ -286,7 +289,7 @@ font-size: 1.5em;
 
 
 div#scores, div#answers {
-	width: 28em;
+	width: 54em;
 	margin: 0 auto;
 	padding: 1em;
 	padding-bottom: .5em;

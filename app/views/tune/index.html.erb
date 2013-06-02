@@ -1,11 +1,12 @@
-<div id="quiz" style="text-align: center;">
+<div id="scores" style="text-align: center; overflow:hidden;">
 	<h1><%= @flag.desc %></h1>
+  <br/>
 	<% @tunes.each do |tune| %>
-		<img src="<%= tune.track.release.image %>" />
+      <div style="float: left; display: inline-block; margin: 0 20px 20px 0; text-align: center; max-width: 175px; position: relative;">
 		<% link_to(tune_path(tune.track_id)) do %>
-		<%= tune.track_title %>
-		<%= tune.artist_name %><br />
+            <img src="<%= tune.image_url %>" width="175" />
 		<% end %>
+      </div>
 	<% end %>
 	<div class="colmask doublepage">
 	<div class="colleft">
