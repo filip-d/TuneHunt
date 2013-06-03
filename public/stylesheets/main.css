@@ -5,7 +5,7 @@ padding: 0.5em;
 font-size: 77%;
 }
 
-a:visited {
+a, a:visited {
     color: #fff;
 }
 
@@ -71,6 +71,7 @@ padding-bottom: .5em;
 position: relative;
 color: #333;
 background: #FFFFFF;
+border-radius: 1.5em;
 -moz-border-radius: 1.5em;
 -webkit-border-radius: 1.5em;
 font-family: Verdana, sans-serif;
@@ -98,7 +99,8 @@ font-size: 1.5em;
 		cursor: pointer;
 		background-color: #2780af;
 		font-size: 100%;
-		-moz-border-radius: .5em;
+        border-radius: .5em;
+        -moz-border-radius: .5em;
 		-webkit-border-radius: .5em;
 		border: 0;
 		text-decoration: none;
@@ -185,7 +187,8 @@ font-size: 1.5em;
 	color: #FFFFFF;
 	background-color: #CC0000;
 	text-align: center;
-	-moz-border-radius: .5em;
+    border-radius: .5em;
+    -moz-border-radius: .5em;
 	-webkit-border-radius: .5em;
 	}
 		div#quiz p.answer.correct {
@@ -215,7 +218,8 @@ font-size: 1.5em;
 		color: #FFFFFF;
 		cursor: pointer;
 		background-color: #2780af;
-		-moz-border-radius: .5em;
+        border-radius: .5em;
+        -moz-border-radius: .5em;
 		-webkit-border-radius: .5em;
 		}
 			div#quiz ol li:hover {
@@ -229,6 +233,7 @@ font-size: 1.5em;
 /*        color: #FFF;          */
         background-color: #AAA;
         cursor: pointer;
+        border-radius: .5em;
         -moz-border-radius: .5em;
         -webkit-border-radius: .5em;
         }
@@ -271,6 +276,7 @@ font-size: 1.5em;
             width: 28em;
             height: 8.5em;
             border: #333333 dotted 2px;
+            border-radius: .5em;
             -moz-border-radius: .5em;
             -webkit-border-radius: .5em;
         }
@@ -296,7 +302,8 @@ div#scores, div#answers {
 	position: relative;
 	color: #333;
 	background: #FFF;
-	-moz-border-radius: 1.5em;
+    border-radius: 1.5em;
+    -moz-border-radius: 1.5em;
 	-webkit-border-radius: 1.5em;
 	font-family: Verdana;
 	font-size: 1.5em;
@@ -309,7 +316,8 @@ div#scores, div#answers {
 	color: #FFF;
 	background-color: #CC0000;
 	text-align: center;
-	-moz-border-radius: .5em;
+    border-radius: .5em;
+    -moz-border-radius: .5em;
 	-webkit-border-radius: .5em;
 	}
 
@@ -320,7 +328,8 @@ div#scores, div#answers {
 		color: #FFF;
 		background-color: #000;
 		font-size: 100%;
-		-moz-border-radius: .5em;
+        border-radius: .5em;
+        -moz-border-radius: .5em;
 		-webkit-border-radius: .5em;
 		border: 0;
 		}
@@ -345,7 +354,8 @@ div#scores, div#answers {
 		padding: 0.1em 1em;
 		background-color: #ccffcc;
 		font-size: 100%;
-		-moz-border-radius: .3em;
+        border-radius: .3em;
+        -moz-border-radius: .3em;
 		-webkit-border-radius: .3em;
 		border: 0;
         display: block;
@@ -360,7 +370,8 @@ div#scores, div#answers {
 		margin: .2em;
 		padding: 0.1em 0.4em;
 		font-size: 100%;
-		-moz-border-radius: .3em;
+        border-radius: .3em;
+        -moz-border-radius: .3em;
 		-webkit-border-radius: .3em;
 		border: 0;
 		color: #FFFFFF;

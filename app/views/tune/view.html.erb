@@ -29,13 +29,22 @@
 				</div>
 			</div>
 	</div>
-	<script type="text/javascript">
-		$(document).ready(function() {
-			$player = $("#player").mPlayer();
-			setTimeout(function(){$player.setFile("<%=@tune.preview_url %>")}, 1200);
-		});
-	</script>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <script type="text/javascript">
+      $(document).ready(function(){
+          $("#player").jPlayer({
+              ready: function () {
+                  $(this).jPlayer("setMedia", {
+                      mp3: "<%=@tune.preview_url %>"
+                  });
+              },
+              swfPath: "/javascripts",
+              supplied: "mp3"
+          });
+          setTimeout(function(){$("#player").jPlayer("play")}, 1200);
+      });
+  </script>
+
   <script type="text/javascript" src="http://underscorejs.org/underscore-min.js"></script>
   <script type="text/javascript" src="http://instant.7digital.com/scripts/7d-buyitnow.min.js"></script>
 </div>
