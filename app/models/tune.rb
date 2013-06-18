@@ -31,6 +31,16 @@ class Tune < ActiveRecord::Base
     tune
   end
 
+  def self.random_flagged_tune
+    Tune.first(
+        :select => "track_id",
+        :joins => "inner join user_tune_flags ON user_tune_flags.tune_id = tunes.id",
+        :conditions => "user_tune_flags.flag_id IN (#{Flag.useful_flags.map{|f|f.id}.join(",")})",
+        :order => "RANDOM()",
+        :limit => "1"
+    )
+  end
+
   def preview_url
     "http://previews.7digital.com/clips/34/#{track_id}.clip.mp3"
   end
