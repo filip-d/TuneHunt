@@ -9,7 +9,7 @@ class TuneController < ApplicationController
         :group => "track_id, image_url, buy_url, tunes.id",
         :order => "count(*) desc",
         :limit => "80"
-    );
+    )
   end
 
   def next
@@ -43,9 +43,21 @@ class TuneController < ApplicationController
   private
 
   def next_track_id
+    if Random.rand(1..5) == 5 then
+      begin
+        Tune.random_flagged_tune.track.id
+      rescue
+        random_track
+      end
+    else
+      random_track
+    end
+  end
+
+  def random_track
     session[:latest_release_id] ||= SEVENDIGITAL_CLIENT.release.get_by_date.first.id
     begin
-    random_release_id = rand(session[:latest_release_id])
+      random_release_id = rand(session[:latest_release_id])
       begin
         recommendations = SEVENDIGITAL_CLIENT.release.get_recommendations(random_release_id, {:imageSize=>"500"})
         if recommendations.empty?
