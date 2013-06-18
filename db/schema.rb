@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120129140327) do
+ActiveRecord::Schema.define(:version => 20130618214443) do
 
   create_table "flags", :force => true do |t|
     t.string "key"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20120129140327) do
     t.integer "artist_id"
     t.string  "artist_name"
     t.string  "image_url"
+    t.string  "buy_url"
   end
 
   create_table "user_tune_flags", :force => true do |t|

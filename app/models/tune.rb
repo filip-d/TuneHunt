@@ -12,6 +12,7 @@ class Tune < ActiveRecord::Base
     tune.artist_id = track.artist.id
     tune.artist_name = track.artist.appears_as
     tune.image_url = track.release.image
+    tune.buy_url = track.url
     tune.track = track
     tune.api_client = sd_client
     tune
@@ -24,6 +25,7 @@ class Tune < ActiveRecord::Base
     tune.artist_id = 1
     tune.artist_name = "unknown"
     tune.image_url = "http://asdsads.com/adsds.jpg"
+    tune.buy_url = "http://7digital.com"
     tune.track = Sevendigital::Track.new(SEVENDIGITAL_CLIENT)
     tune.api_client = SEVENDIGITAL_CLIENT
     tune
@@ -41,7 +43,11 @@ class Tune < ActiveRecord::Base
   end
 
   def track
-    @track ||= api_client.track.get_details(track_id)
+    begin
+      @track ||= SEVENDIGITAL_CLIENT.track.get_details(track_id)
+    rescue
+      @track ||= nil
+    end
   end
 
   def flag(user_id, flag_id)
@@ -50,6 +56,13 @@ class Tune < ActiveRecord::Base
     my_flag.user_id = user_id
     my_flag.flag_id = flag_id
     my_flag.save
+  end
+
+  def url
+    return buy_url if buy_url
+    buy_url = track ? track.url : 'http://7digital.com'
+    save
+    buy_url
   end
 
 end
