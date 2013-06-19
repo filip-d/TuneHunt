@@ -5,3 +5,4 @@ log/*.log
 tmp/
 config/sevendigital.yml
 Gemfile.lock
+config/database.yml

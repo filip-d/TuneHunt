@@ -43,7 +43,7 @@ class TuneController < ApplicationController
   private
 
   def next_track_id
-    if Random.rand(1..5) == 5 then
+    if Random.rand(4) == 4 then
       begin
         Tune.random_flagged_tune.track.id
       rescue

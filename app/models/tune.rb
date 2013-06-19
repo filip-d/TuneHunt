@@ -36,7 +36,7 @@ class Tune < ActiveRecord::Base
         :select => "track_id",
         :joins => "inner join user_tune_flags ON user_tune_flags.tune_id = tunes.id",
         :conditions => "user_tune_flags.flag_id IN (#{Flag.useful_flags.map{|f|f.id}.join(",")})",
-        :order => "RANDOM()",
+        :order => "RAND()",
         :limit => "1"
     )
   end
