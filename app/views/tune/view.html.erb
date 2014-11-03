@@ -35,7 +35,7 @@
           $("#player").jPlayer({
               ready: function () {
                   $(this).jPlayer("setMedia", {
-                      mp3: "<%=@tune.preview_url %>"
+                      mp3: "<%=@tune.preview_url.html_safe %>"
                   });
               },
               swfPath: "/javascripts",

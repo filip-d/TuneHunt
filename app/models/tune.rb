@@ -42,7 +42,8 @@ class Tune < ActiveRecord::Base
   end
 
   def preview_url
-    "http://previews.7digital.com/clips/34/#{track_id}.clip.mp3"
+    track.preview_url
+#    "http://api.7digital.com/1.2/track/preview?trackid=#{track_id}&oauth_consumer_key=YOUR_KEY_HERE"
   end
 
   def stream_url(user_id)
